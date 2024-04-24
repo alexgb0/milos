@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .content {
+            position: fixed;
+            top: 0;
+            text-align: center;
+            color: white;
+            width: 100%;
+            margin-top: 5vh;
+        }
+
+        .fxl {
+            font-size: 3em;
+        }
+
+        .fm {
+            font-size: 1em;
+        }
+
+        /* <a> no decoration */
+        .anodec {
+            color: unset;
+        }
+
+        .rainbow-text {
+            color: hsl(calc(360deg * var(--char-percent)),
+                    90%,
+                    65%);
+
+        }
+
+        .rainbow-text.animated {
+            animation: rainbow-colors 2s linear infinite;
+            animation-delay: calc(-2s * var(--char-percent));
+        }
+
+        /* Unfortunately, browsers try to take the shortest distance between transition/animation properties, so a simple `0turn` to `1turn` doesn't get the proper effect. */
+        @keyframes rainbow-colors {
+            0% {
+                color: hsl(0turn, 90%, 65%);
+            }
+
+            25% {
+                color: hsl(.25turn, 90%, 65%);
+            }
+
+            50% {
+                color: hsl(.5turn, 90%, 65%);
+            }
+
+            75% {
+                color: hsl(.75turn, 90%, 65%);
+            }
+
+            100% {
+                color: hsl(1turn, 90%, 65%);
+            }
+        }
+    </style>
+</head>
+
+<video autoplay muted loop class="video">
+    <source src="bg.mp4" type="video/mp4">
+</video>
+
+<body>
+    <div class="content">
+        <div class="rainbow-text animated">
+            <h1 class="fxl">$MILOS</h1>
+            <h2 class="fxl">BEST FUCKING COIN</h2>
+            <h2 class="fm">
+                <a class="anodec" href="https://t.me/+aCPM_CTeJOg5NDA0">TELEGRAM</a>
+                <a class="anodec" href="sex.com">TWITTER</a>
+            </h2>
+        </div>
+    </div>
+
+    <script>
+        const text = document.getElementsByClassName("rainbow");
+    </script>
+</body>
+
+</html>
